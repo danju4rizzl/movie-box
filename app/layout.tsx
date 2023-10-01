@@ -20,9 +20,11 @@ export default function RootLayout({
   return (
     <ReactQueryProvider>
       <html lang="en">
-        <Header />
-        <body className={inter.className}>{children}</body>
-        {/* TODO: Add footer here */}
+        <body className={inter.className}>
+          <Header />
+          {children}
+          {/* TODO: Add footer here */}
+        </body>
       </html>
     </ReactQueryProvider>
   );
