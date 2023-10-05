@@ -33,7 +33,7 @@ export default function Header() {
           scrollState ? 'scale-100' : 'scale-150'
         }`}
       >
-        <Image src={'assets/logo.svg'} alt="logo" width={150} height={50} />
+        <Image src={'/assets/logo.svg'} alt="logo" width={150} height={50} />
       </Link>
     </header>
   );
