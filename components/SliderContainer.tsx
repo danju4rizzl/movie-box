@@ -11,9 +11,7 @@ import { Movie } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { FaImdb, FaEye } from 'react-icons/fa6';
-
-import * as Constants from '@/utils/constants';
+import { BiLike } from 'react-icons/bi';
 
 export default function SliderContainer() {
   const { data: moviesData } = useFetchTmdbData('trending/movie/day', 'movie');
@@ -39,7 +37,7 @@ export default function SliderContainer() {
             <SwiperSlide key={idx} className="group">
               <>
                 {/* Image */}
-                <Link href={`movie/${id}`} title={title}>
+                <Link href={`/movie/${id}`} title={title}>
                   <Image
                     src={`http://image.tmdb.org/t/p/w342/${poster_path}`}
                     alt={title}
@@ -57,7 +55,7 @@ export default function SliderContainer() {
                   </p>
 
                   <Link
-                    href={`movie/${id}`}
+                    href={`/movie/${id}`}
                     className="text-xl font-medium xl:font-bold text-gray-800 leading-tight capitalize 
                     truncate group-hover:text-rose-700 ease-out duration-500"
                     title={title}
@@ -66,15 +64,22 @@ export default function SliderContainer() {
                   </Link>
                 </div>
                 {/* Rating */}
-                <div className="flex items-center justify-between h-6 px-1.5">
+                <div className="flex items-center justify-between px-1.5">
                   <div className="flex items-center">
-                    <FaImdb className="bg-yellow-400 w-5 h-5" />
+                    <Image
+                      src={'/assets/imdb.svg'}
+                      width={40}
+                      height={40}
+                      alt="Logo of IMDB"
+                    />
                     <p className="mx-2 text-sm text-gray-800 font-semibold">
                       {vote_average.toFixed(1)}
                     </p>
                   </div>
                   <div className="flex items-center">
-                    <FaEye className="text-rose-700" />
+                    <div className="bg-rose-700 p-1.5 rounded-full">
+                      <BiLike className="text-white" />
+                    </div>
                     <p className="mx-1 text-sm text-gray-800 font-semibold">
                       {vote_count}
                     </p>
@@ -85,6 +90,7 @@ export default function SliderContainer() {
           )
         )}
       />
+      {/* Tv Shows*/}
     </div>
   );
 }

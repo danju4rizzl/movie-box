@@ -14,8 +14,8 @@ interface SliderProps {
 export default function SliderSection({ title, slide, duration }: SliderProps) {
   return (
     <div>
-      <h2 className="text-gray-900 text-3xl md:text-4xl text-center md:text-left font-bold capitalize">
-        <span className="border-l-8 border-rose-700  mx-5"></span>
+      <h2 className="text-gray-900 text-xl sm:text-3xl md:text-4xl text-left font-bold capitalize">
+        <span className="border-l-8 border-rose-700 mx-5"></span>
         {title}
       </h2>
       <Swiper
