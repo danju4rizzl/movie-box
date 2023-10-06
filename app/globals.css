@@ -2,3 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: rgb(190 18 60);
+  --color-white: #ffffff;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: var(--color-white);
+  padding: 15px 20px;
+  border-radius: 8px;
+  opacity: 0.5;
+  transition: all 0.3s ease-out;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: var(--color-primary);
+  opacity: 1;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: var(--color-white);
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px !important;
+  color: var(--color-primary);
+}
