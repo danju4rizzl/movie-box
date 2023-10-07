@@ -4,6 +4,7 @@ import { SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BiLike } from 'react-icons/bi';
+import { TMDB_IMAGE_BASE } from '@/utils/constants';
 
 interface TvShowSliderProps {
   tvShowData: TvShow[];
@@ -32,7 +33,7 @@ export default function TvShowSlider({ tvShowData }: TvShowSliderProps) {
                 {/* Image */}
                 <Link href={`/tv/${id}`} title={name}>
                   <Image
-                    src={`http://image.tmdb.org/t/p/w342/${poster_path}`}
+                    src={`${TMDB_IMAGE_BASE}/w342/${poster_path}`}
                     alt={name}
                     width={300}
                     height={450}

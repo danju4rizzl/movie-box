@@ -4,6 +4,7 @@ import { SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BiLike } from 'react-icons/bi';
+import { TMDB_IMAGE_BASE } from '@/utils/constants';
 
 interface MovieSliderProps {
   moviesData: Movie[];
@@ -32,7 +33,7 @@ export default function MovieSlider({ moviesData }: MovieSliderProps) {
                 {/* Image */}
                 <Link href={`/movie/${id}`} title={title}>
                   <Image
-                    src={`http://image.tmdb.org/t/p/w342/${poster_path}`}
+                    src={`${TMDB_IMAGE_BASE}/w342/${poster_path}`}
                     alt={title}
                     width={300}
                     height={450}
