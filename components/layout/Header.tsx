@@ -24,13 +24,13 @@ export default function Header() {
   }, []);
   return (
     <header
-      className={`flex justify-between fixed w-screen z-50 h-20 px-20 md:px32 transition duration-300 ease-linear ${
+      className={`flex fixed w-screen z-50 h-20 px-20 md:px32 transition duration-300 ease-linear ${
         scrollState ? 'bg-gray-600/60 backdrop-blur-md' : ''
       }`}
     >
       <Link
         href="/"
-        className={`text-white flex items-center text-3xl font-bold tracking-wider transition duration-500  ${
+        className={`flex items-center transition duration-500  ${
           scrollState ? 'scale-100' : 'scale-150'
         }`}
       >

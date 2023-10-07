@@ -4,7 +4,7 @@ import { SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BiLike } from 'react-icons/bi';
-import { TMDB_IMAGE_BASE } from '@/utils/constants';
+import CustomImage from './CustomImage';
 
 interface MovieSliderProps {
   moviesData: Movie[];
@@ -32,12 +32,12 @@ export default function MovieSlider({ moviesData }: MovieSliderProps) {
               <>
                 {/* Image */}
                 <Link href={`/movie/${id}`} title={title}>
-                  <Image
-                    src={`${TMDB_IMAGE_BASE}/w342/${poster_path}`}
-                    alt={title}
-                    width={300}
-                    height={450}
-                    className={`rounded-lg mx-auto`}
+                  <CustomImage
+                    imgPath={poster_path}
+                    imgTitle={title}
+                    imgHeight={450}
+                    imgWidth={300}
+                    imgSize={342}
                   />
                 </Link>
 

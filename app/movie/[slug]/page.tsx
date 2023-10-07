@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { SwiperSlide } from 'swiper/react';
 
 import { TMDB_IMAGE_BASE } from '@/utils/constants';
+import CustomImage from '@/components/CustomImage';
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { data: movieData, isLoading } = useFetchTmdbData(
@@ -36,12 +37,12 @@ export default function Page({ params }: { params: { slug: string } }) {
         }}
       >
         <div className="flex flex-col md:flex-row px-5 md:space-x-10 max-w-6xl">
-          <Image
-            src={`${TMDB_IMAGE_BASE}/w342/${movieData.poster_path}`}
-            width={400}
-            height={450}
-            alt={movieData.title}
-            className="rounded-lg mb-5"
+          <CustomImage
+            imgPath={movieData.poster_path}
+            imgTitle={movieData.title}
+            imgHeight={400}
+            imgWidth={450}
+            imgSize={342}
           />
           <div className="grid items-center text-white text-sm">
             <div className="grid gap-y-1">
@@ -148,12 +149,12 @@ export default function Page({ params }: { params: { slug: string } }) {
                   title={title}
                   className="grid justify-center group"
                 >
-                  <Image
-                    src={`${TMDB_IMAGE_BASE}/w342/${backdrop_path}`}
-                    alt={title}
-                    width={350}
-                    height={150}
-                    className={`rounded-lg mx-auto`}
+                  <CustomImage
+                    imgPath={backdrop_path}
+                    imgTitle={title}
+                    imgHeight={150}
+                    imgWidth={350}
+                    imgSize={342}
                   />
                   <h5 className="font-bold group-hover:text-rose-700">
                     {title}

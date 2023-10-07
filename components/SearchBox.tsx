@@ -20,14 +20,14 @@ export default function SearchBox() {
   const [canSearch, setCanSearch] = useState(false);
 
   const { data: searchData } = useQuery({
-    queryKey: ['search'],
+    queryKey: ['search', searchWord],
     queryFn: async () => {
       const response = await axios.get(
         `https://api.themoviedb.org/3/search/movie?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&language=en-US&query=${searchWord}&page=1&include_adult=false`
       );
       return response.data.results;
     },
-    enabled: canSearch
+    enabled: !!canSearch
   });
 
   // Changes the search state when the user types
@@ -41,7 +41,7 @@ export default function SearchBox() {
   }, [searchWord]);
 
   return (
-    <div className="block">
+    <div className="mx-auto">
       <div className="border-2 mt-5 mb-2 px-2 rounded-lg ">
         <form className="text-white flex items-center  ">
           <input
@@ -66,7 +66,7 @@ export default function SearchBox() {
         ${canSearch ? 'block' : 'hidden'}`}
       >
         {searchData
-          ?.slice(0, 4)
+          ?.slice(0, 3)
           .map(({ id, title, poster_path }: SearchResult) => (
             <li
               key={id}
