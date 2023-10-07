@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import SearchBox from '../SearchBox';
 
 export default function Header() {
   const [scrollState, setScrollState] = useState(false);
@@ -35,6 +36,7 @@ export default function Header() {
       >
         <Image src={'/assets/logo.svg'} alt="logo" width={150} height={50} />
       </Link>
+      <SearchBox />
     </header>
   );
 }
