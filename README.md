@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie-box 🎬
 
-## Getting Started
+A movie review web app showcasing current movies and TVshows. 
 
-First, run the development server:
+### 🏁 Getting Started
 
-```bash
-npm run dev
+To get started, first you need to clone the repo then install the dependencies you need to run the app. Make sure you have [NodeJS](https://nodejs.org/en) from version 20 ^ installed. To install the dependence run this code in your terminal:
+
+```
+pnpm install 
 # or
-yarn dev
+npm install
+#or
+yarn  
+#or
+bun install #recommended
+```
+
+While instating the dependencies, we need to get the free `API` key from [TMDB](https://www.themoviedb.org/settings/api) settings page [here](https://www.themoviedb.org/settings/api). To find your api key just goto the `Settings` page then click on `API ` from the sidebar options.
+
+![Alt text](image-1.png)
+
+After you have gained your `API` key you can duplicate the `.env.example` file and rename the copy to `.env` then replace the value of `NEXT_PUBLIC_TMDB_API_KEY` with the  `API` key you got from [TMDB](https://www.themoviedb.org/settings/api).
+
+
+Once thats done, you can run the the following command to start the app.
+
+```
+bun dev #recommended
 # or
 pnpm dev
 # or
-bun dev
+npm run dev
+# or
+yarn dev
 ```
+,
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the app on [localhost:3000](http://localhost:3000) development server. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+### 📦 Packages used in the project
 
-To learn more about Next.js, take a look at the following resources:
+- [NextJS](https://nextjs.org/) to handle the backend and frontend of the application
+- [React](https://reactjs.org/) for building user interfaces
+- [React Query](https://react-query.tanstack.com/) for managing and caching server state
+- [Axios](https://axios-http.com/) for making HTTP requests
+- [Swiper](https://swiperjs.com/) for creating responsive and touch-friendly sliders
+- [Tailwind CSS](https://tailwindcss.com/) for building responsive and customizable UI components
+- [TypeScript](https://www.typescriptlang.org/) for static types in JavaScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+***
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+ <details>
+ <summary> 🧠 Development Brainstorm Notes </summary>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Switching from react-query to NextJS 14's Server Actions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Considering the benefits of server actions in NextJS 14, such as improved performance and reduced bundle size, I'm considering switching from react-query to NextJS 14's server actions. This would involve refactoring most of the client components into server components.
+
+#### Using AI in the App
+
+Another area I'm exploring is integrating AI into the app. There could be several ways to incorporate AI, such as:
+
+- Personalized recommendations: Using AI algorithms, we could provide personalized movie and TV show recommendations based on user preferences and behavior.
+- Sentiment analysis: We could analyze user reviews and comments to determine sentiment and provide insights on popular opinions.
+- Predictive analytics: AI could be used to predict trends in movie and TV show ratings and popularity over time.
+
+Please note that these are just ideas and would require further research and planning.
+</details>
+
