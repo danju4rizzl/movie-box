@@ -43,12 +43,14 @@ This will start the app on [localhost:3000](http://localhost:3000) development s
 ### 📦 Packages used in the project
 
 - [NextJS](https://nextjs.org/) to handle the backend and frontend of the application
-- [React](https://reactjs.org/) for building user interfaces
+- [React](https://react.dev/) for building user interfaces
 - [React Query](https://react-query.tanstack.com/) for managing and caching server state
 - [Axios](https://axios-http.com/) for making HTTP requests
 - [Swiper](https://swiperjs.com/) for creating responsive and touch-friendly sliders
 - [Tailwind CSS](https://tailwindcss.com/) for building responsive and customizable UI components
 - [TypeScript](https://www.typescriptlang.org/) for static types in JavaScript
+- [React Icons](https://react-icons.github.io/react-icons/) a collection of every icon set you'll ever need
+- [React Youtube](https://www.npmjs.com/package/react-youtube) for a layer over the YouTube IFrame Player API
 
 ***
 
